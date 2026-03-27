@@ -27,12 +27,30 @@ knitr::kable(StudentSurvey %>%
     mutate(BMI = 701 * (Weight / (Height ^ 2))) %>%
     select(Sex, Weight, Height, BMI) %>%
     head(n = 10))
+
 ```
 
 ^[Question 1 Complete]
 
 
+#### Labeling Each Student's BMI
+```{r}
+BMIStudent_Survey = StudentSurvey %>% 
+    mutate(BMI = 701 * (Weight / (Height ^ 2))) %>%
+    select(Sex, Weight, Height, BMI)
 
+knitr::kable(BMIStudent_Survey %>%
+  mutate(
+    BMI_category = cut(
+      BMI,
+      breaks = c(-Inf, 18.5, 25, 30, Inf),
+      labels = c("Underweight", "Healthy Weight", "Overweight", "Obese")
+    )
+  ) %>%
+  head(n = 10))
+```
+
+^[Question 2 Complete]
 
 
 
