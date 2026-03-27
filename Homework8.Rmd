@@ -53,4 +53,23 @@ knitr::kable(BMIStudent_Survey %>%
 ^[Question 2 Complete]
 
 
+#### Finding Lowest and Highest BMI for Male and Female
+```{r}
+knitr::kable(BMIStudent_Survey %>%
+    group_by(Sex) %>%
+    summarize(HighestBMI = max(BMI, na.rm = TRUE),
+              LowestBMI = min(BMI, na.rm = TRUE)))
+    
+```
+
+^[Question 3 Complete]
+
+
+
+
+
+
+
+
+
 
