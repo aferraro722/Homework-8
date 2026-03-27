@@ -77,6 +77,17 @@ knitr::kable(StudentSurvey %>%
 
 
 
+#### Finding the Z-Score of Each Student's SAT Score
+```{r}
+knitr::kable(StudentSurvey %>%
+    mutate(
+        z_score = ((SAT - mean(SAT)) / sd(SAT)),
+        .keep = "used"
+    ) %>%
+    head(n = 6))
+```
+
+^[Question 5 Complete]
 
 
 
