@@ -1,7 +1,9 @@
 ---
 title: "Homework 8"
 author: "Anthony Ferraro"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 linkcolor: blue
 urlcolor: blue
 ---
@@ -15,6 +17,22 @@ library(knitr)
 theme_set(theme_minimal())
 
 library(Lock5Data)
+data("StudentSurvey")
 ```
+
+
+#### Making a BMI Column
+```{r}
+knitr::kable(StudentSurvey %>% 
+    mutate(BMI = 701 * (Weight / (Height ^ 2))) %>%
+    select(Sex, Weight, Height, BMI) %>%
+    head(n = 10))
+```
+
+^[Question 1 Complete]
+
+
+
+
 
 
