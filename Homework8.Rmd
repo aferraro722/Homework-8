@@ -1,0 +1,20 @@
+---
+title: "Homework 8"
+author: "Anthony Ferraro"
+output: pdf_document
+linkcolor: blue
+urlcolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment = NA, fig.align = "center", out.width = "50%", warning = FALSE, message = FALSE)
+
+library(tidyverse)
+library(knitr)
+
+theme_set(theme_minimal())
+
+library(Lock5Data)
+```
+
+
